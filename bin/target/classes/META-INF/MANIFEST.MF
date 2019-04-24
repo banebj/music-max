@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: musicmax
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Branislav
+Implementation-Vendor-Id: com.pmf.musicmax
+Build-Jdk: 1.8.0_171
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/musicmax
+Created-By: Maven Integration for Eclipse
+
