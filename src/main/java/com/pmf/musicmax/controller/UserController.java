@@ -17,19 +17,16 @@ public class UserController {
 	@Autowired
 	UserRepository ur;
 	
-	/*
-	 * @RequestMapping(value="/save",method=RequestMethod.POST)
-	public String saveStudent(Student s,Model m) {
-		sr.save(s);
-		m.addAttribute("message", "Uspesno sacuvan");
-		return "unos/unosStudenta";
-	}
-	 * */
 	@RequestMapping(value="/save", method=RequestMethod.POST)
 	public String saveUser(User u, Model m) {
 		ur.save(u);
 		m.addAttribute("message", "Korisnik je uspesno sacuvan.");
 		return "unos/Registracija";
+	}
+	
+	@RequestMapping(value="registration", method = RequestMethod.GET)
+	public String registracija(Model m) {
+		return "unos/Registracija.jsp";
 	}
 	
 	@RequestMapping(value="/login", method=RequestMethod.GET)

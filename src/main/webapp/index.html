@@ -1,24 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="css/login.css">
-<link rel="stylesheet" href="css/style.css">
-<title>Music Max</title>
+  <meta charset="UTF-8">
+  <title>Music Max</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400, 600' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<div id="sadrzaj">
-	<div class="login">
-		<h1>Ulogujte se</h1>
-		<form action="/users/login" method="post">
-			<input name="username" placeholder="Username">
-			<input type="password" name="password" placeholder="Password">
-			<input type="submit" value="Log in">
-		</form>
-	</div>
-	<div>
-		<h3><a href="unos/Registracija">Nemate nalog?</a></h3>
-	</div>
-</div>
+  <header>
+		<div class="navbar" id="myNav">
+        <div>
+          <a href="#">HOME</a>
+          <a href="#">MUSIC</a>
+          <a href="#">FESTIVALS</a>
+          <a href="#">NEWS</a>
+          <a href="#">FORUM</a>
+        </div>
+        <div class="nav-right">
+          <a href="#">Sign in</a>
+          <a href="#">Sign up</a>
+        </div>
+    </div>
+  </header>
+  <div class="bgimg">
+    <div class="caption">
+      <span class="border">Music Max</span>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1 style="text-align:center;">Bastille Announce New Single 'Joy'</h1>
+    <p>Bastille have announced that their new single, “Joy” will be released Thursday (May 2) via premiere on BBC Radio 1.
+
+“We're very excited to give Bastille's brand new single 'Joy' its first radio play, this Thursday at 3:30pm!” the U.K. foursome tweeted along with a video announcement on Wednesday (May 1). “Set your reminders and make sure you're listening to @Scott_Mills and @Chris_Stark tomorrow.”
+
+First, Bastille is up for two 2019 Billboard Music Awards, for their collaboration with Marshmello “Happier.” The show airs live tonight from the MGM Garden Arena in Las Vegas at 8:00 p.m. ET on NBC.</p>
+    <p>See the band’s full announcement below.</p>
+    <div class="center">
+      <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Hey guys, we’re very happy to announce our new single &#39;Joy&#39; which will premiere at 3.30pm BST tomorrow on <a href="https://twitter.com/BBCR1?ref_src=twsrc%5Etfw">@BBCR1</a>. We&#39;ll be in the studio with Scott Mills to talk about it so tune in to join us if you’re about. <a href="https://t.co/7WhGsXB0Hd">pic.twitter.com/7WhGsXB0Hd</a></p>&mdash; BASTILLE (@bastilledan) <a href="https://twitter.com/bastilledan/status/1123597008269447168?ref_src=twsrc%5Etfw">May 1, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+  </div>
+
+  <script>
+  /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("myNav").style.top = "0";
+    } else {
+      document.getElementById("myNav").style.top = "-50px";
+    }
+    prevScrollpos = currentScrollPos;
+  }
+  </script>
+
 </body>
 </html>
