@@ -14,7 +14,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-	private String r;
+	private String rr;
 	
     @Column
     private Boolean active;
