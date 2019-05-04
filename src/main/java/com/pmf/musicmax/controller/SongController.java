@@ -163,9 +163,10 @@ public class SongController {
 		Song song = (Song) request.getSession().getAttribute("song");
 		int songId = song.getId();
 		User user = (User) request.getSession().getAttribute("user");
-		int userId = 1/*user.getId()*/;
+		int userId = user.getId();
 		String text = request.getParameter("text");
 		System.out.println(songId);
+		System.out.println("userId = " + userId);
 		
 		Comment commented = sr.addCommentBySongAndUserId(text, userId, songId);
 		
