@@ -178,7 +178,7 @@ option{
         <div class="nav-right">
         <c:if test="${!empty user}">
           <a href="#">Profile</a>
-          <a href="/index.html">Logout</a>
+          <a href="/user/logout">Logout</a>
          </c:if>
          <c:if test="${empty user}">
           	<a href="/unos/login.jsp">Sign in</a>
