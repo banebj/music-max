@@ -36,6 +36,7 @@ public class UserController {
 		return "unos/Registracija.jsp";
 	}
 	
+	
 	@RequestMapping(value="login", method=RequestMethod.POST)
     public String login(Model model, HttpServletRequest request, HttpSession session) {
 		String username = request.getParameter("username");
@@ -50,5 +51,11 @@ public class UserController {
 		}
 		request.getSession().setAttribute("messagee", "Username or password does not exist");
 		return "unos/login";
+    }
+	
+	@RequestMapping(value="logout", method=RequestMethod.GET)
+    public String logout(Model model, HttpServletRequest request, HttpSession session) {
+		request.getSession().setAttribute("user", "");
+		return "home";
     }
 }
