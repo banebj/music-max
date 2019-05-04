@@ -133,8 +133,10 @@ public class SongController {
 			m.addAttribute("song", s);
 			return "Song/addSong";
 		}
+		User user = (User) request.getSession().getAttribute("user");
+		int userId = user.getId();
 		
-		Song songg = sr.addSong(categoryId, title, author, artist, releaseYear);
+		Song songg = sr.addSong(categoryId, title, author, artist, releaseYear, userId);
 		if(songg==null){
 			request.getSession().setAttribute("message", "");
 			return "redirect:/song/getAllSongs";
