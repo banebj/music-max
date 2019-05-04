@@ -99,21 +99,27 @@ nav li {
 </head>
 <body>
 
- <header>
-	<div class="navbar" id="myNav">
-    <div>
-       <a href="/home.jsp">HOME</a>
-       <a href="/song/getAllSongs">MUSIC</a>
-       <a href="/Song/NewFile.jsp">FESTIVALS</a>
-       <a href="#">NEWS</a>
-       <a href="#">FORUM</a>
-     </div>
-      <div class="nav-right">
-        <a href="#">Sign in</a>
-        <a href="#">Sign up</a>
-       </div>
+  <header>
+		<div class="navbar" id="myNav">
+        <div>
+          <a href="/home.jsp">HOME</a>
+          <a href="/song/getAllSongs">MUSIC</a>
+          <a href="/Song/NewFile.jsp">FESTIVALS</a>
+          <a href="#">NEWS</a>
+          <a href="#">FORUM</a>
+        </div>
+        <div class="nav-right">
+        <c:if test="${!empty user}">
+          <a href="#">Profile</a>
+          <a href="/index.html">Logout</a>
+         </c:if>
+         <c:if test="${empty user}">
+          	<a href="/unos/login.jsp">Sign in</a>
+       		<a href="/unos/Registracija.jsp">Sign up</a>
+         </c:if>
+        </div>
     </div>
-</header>
+  </header>
 <br><br><br><br>
 
 <div class="background1">
