@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
+
 <style>
 body { 
   margin: 0;
@@ -58,6 +58,23 @@ nav li {
   float: right;
 }
 
+.form{
+	margin: auto;
+    width: 60%;
+    text-align: center;
+	font-weight: 1000;
+	font-style: italic;
+	background-color: black;
+	color:white;
+	margin: auto;
+    width: 25%;
+    border: 10px solid white;
+}
+
+.naslov{
+	color:white;
+	font-size: 150%;
+}
 </style>
 
 <meta charset="ISO-8859-1">
@@ -65,34 +82,33 @@ nav li {
 </head>
 <body>
 
-  <header>
-		<div class="navbar" id="myNav">
-        <div>
-          <a href="/home.jsp">HOME</a>
-          <a href="/song/getAllSongs">MUSIC</a>
-          <a href="/Song/NewFile.jsp">FESTIVALS</a>
-          <a href="#">NEWS</a>
-          <a href="#">FORUM</a>
-        </div>
-        <div class="nav-right">
-        <c:if test="${!empty user}">
-          <a href="#">Profile</a>
-          <a href="/user/logout">Logout</a>
+ <header>
+	<div class="navbar" id="myNav">
+    <div>
+    	<a href="/home.jsp">HOME</a>
+        <a href="/song/getAllSongs">MUSIC</a>
+        <a href="/Song/NewFile.jsp">FESTIVALS</a>
+        <a href="#">NEWS</a>
+        <a href="#">FORUM</a>
+   	</div>
+    <div class="nav-right">
+    	<c:if test="${!empty user}">
+        	<a href="#">Profile</a>
+          	<a href="/user/logout">Logout</a>
          </c:if>
          <c:if test="${empty user}">
           	<a href="/unos/login.jsp">Sign in</a>
        		<a href="/unos/Registracija.jsp">Sign up</a>
          </c:if>
-        </div>
+    </div>
     </div>
   </header>
   
-    <div class="caption">
-      <span class="border">Music Max</span>
-    </div>
-
-<!--<c:if test="${!empty user}">-->
- <!-- </c:if> -->
+  <div class="form">
+	<div class="naslov">
+		${messagee}Music Max<br>
+	</div><br><br>
+  </div>
 
 </body>
 </html>
