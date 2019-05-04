@@ -136,15 +136,15 @@ input[type=submit]:hover {
   <header>
 		<div class="navbar" id="myNav">
         <div>
-          <a href="home.jsp">HOME</a>
+          <a href="/home.jsp">HOME</a>
           <a href="/song/getAllSongs">MUSIC</a>
           <a href="/Song/NewFile.jsp">FESTIVALS</a>
           <a href="#">NEWS</a>
           <a href="#">FORUM</a>
         </div>
         <div class="nav-right">
-          <a href="#">Sign in</a>
-          <a href="index.html">Sign up</a>
+          <a href="/unos/login.jsp">Sign in</a>
+          <a href="/unos/Registracija.jsp">Sign up</a>
         </div>
     </div>
   </header>
