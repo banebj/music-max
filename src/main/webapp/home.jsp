@@ -86,7 +86,7 @@ nav li {
  <header>
 	<div class="navbar" id="myNav">
     <div>
-    	<a href="/home.jsp">HOME</a>
+    	<a href="/user/getUserWithMostSongsPosted">HOME</a>
         <a href="/song/getAllSongs">MUSIC</a>
         <a href="/Song/NewFile.jsp">FESTIVALS</a>
         <a href="#">NEWS</a>
@@ -105,9 +105,13 @@ nav li {
     </div>
   </header>
   
+  <br><br><br><br>
   <div class="form">
 	<div class="naslov">
-		${messagee}Music Max<br>
+		Korisnici sa najvise postavljenih pesama su<br>
+		<c:forEach items="${users}" var="u">
+		${u.firstName} ${u.lastName}<br>
+		</c:forEach>
 	</div><br><br>
   </div>
 
