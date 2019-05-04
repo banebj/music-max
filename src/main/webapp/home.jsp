@@ -77,7 +77,7 @@ nav li {
         <div class="nav-right">
         <c:if test="${!empty user}">
           <a href="#">Profile</a>
-          <a href="/index.html">Logout</a>
+          <a href="/user/logout">Logout</a>
          </c:if>
          <c:if test="${empty user}">
           	<a href="/unos/login.jsp">Sign in</a>
@@ -86,6 +86,10 @@ nav li {
         </div>
     </div>
   </header>
+  
+    <div class="caption">
+      <span class="border">Music Max</span>
+    </div>
 
 <!--<c:if test="${!empty user}">-->
  <!-- </c:if> -->
