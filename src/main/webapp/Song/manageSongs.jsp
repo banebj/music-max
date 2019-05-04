@@ -241,11 +241,13 @@ option{
 <input class="buttonSearch" type="submit" value="Search...">
 </form>
 
+<c:if test="${!empty user}">
 <a href="/song/getAllCategories" style="text-decoration:none;">
 <div class="button">
 Add Song
 </div>
 </a>
+</c:if>
 	
 <table id="customers">
   <tr>
