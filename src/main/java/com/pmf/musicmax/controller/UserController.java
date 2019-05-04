@@ -1,5 +1,8 @@
 package com.pmf.musicmax.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -58,4 +61,14 @@ public class UserController {
 		request.getSession().setAttribute("user", "");
 		return "home";
     }
+	
+	@RequestMapping(value="getUserWithMostSongsPosted", method=RequestMethod.GET)
+    public String getUserWithMostSongsPosted(Model model, HttpServletRequest request, HttpSession session) {
+		List<User> users = new ArrayList<User>();
+		users = urr.getUserWithMostSongsPosted();
+		request.getSession().setAttribute("users", users);
+		model.addAttribute("users", users);
+		return "home";
+    }
+	
 }
