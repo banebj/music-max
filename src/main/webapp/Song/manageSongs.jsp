@@ -166,21 +166,27 @@ option{
 </head>
 <body>
 
- <header>
-	<div class="navbar" id="myNav">
-    <div>
-       <a href="/home.jsp">HOME</a>
-       <a href="/song/getAllSongs">MUSIC</a>
-       <a href="/Song/NewFile.jsp">FESTIVALS</a>
-       <a href="#">NEWS</a>
-       <a href="#">FORUM</a>
-     </div>
-      <div class="nav-right">
-        <a href="#">Sign in</a>
-        <a href="#">Sign up</a>
-       </div>
+  <header>
+		<div class="navbar" id="myNav">
+        <div>
+          <a href="/home.jsp">HOME</a>
+          <a href="/song/getAllSongs">MUSIC</a>
+          <a href="/Song/NewFile.jsp">FESTIVALS</a>
+          <a href="#">NEWS</a>
+          <a href="#">FORUM</a>
+        </div>
+        <div class="nav-right">
+        <c:if test="${!empty user}">
+          <a href="#">Profile</a>
+          <a href="/index.html">Logout</a>
+         </c:if>
+         <c:if test="${empty user}">
+          	<a href="/unos/login.jsp">Sign in</a>
+       		<a href="/unos/Registracija.jsp">Sign up</a>
+         </c:if>
+        </div>
     </div>
-</header>
+  </header>
 
 <br><br><br><br>
 
@@ -248,9 +254,9 @@ Add Song
     <th>Artist</th>
     <th>Release Year</th>
     <th>Category</th>
-
+	<c:if test="${!empty user}">
     <th></th>
-
+	</c:if> 
   </tr>
   <c:forEach items="${songsTable}" var="s">
   <tr>
@@ -259,14 +265,14 @@ Add Song
     <td>${s.artist}</td>
     <td>${s.releaseYear}</td>
     <td>${s.category.type}</td>
-
+	<c:if test="${!empty user}">
     <td>
     <form action="/song/getAllCommentsBySongById" method="GET">
 		<input type="hidden" name="id" value="${s.id}"/> 
 		<input class="submitComment" type="submit" value="Comment..."/>
 	</form>
 	</td>
-
+	</c:if>
   </tr>
   </c:forEach>
  </table>
