@@ -38,6 +38,10 @@ public class User implements Serializable {
 	@OneToMany(mappedBy="user")
 	private List<News> news;
 
+	//bi-directional many-to-one association to Song
+	@OneToMany(mappedBy="user")
+	private List<Song> songs;
+
 	//bi-directional many-to-one association to Topic
 	@OneToMany(mappedBy="user")
 	private List<Topic> topics;
@@ -148,6 +152,28 @@ public class User implements Serializable {
 		news.setUser(null);
 
 		return news;
+	}
+
+	public List<Song> getSongs() {
+		return this.songs;
+	}
+
+	public void setSongs(List<Song> songs) {
+		this.songs = songs;
+	}
+
+	public Song addSong(Song song) {
+		getSongs().add(song);
+		song.setUser(this);
+
+		return song;
+	}
+
+	public Song removeSong(Song song) {
+		getSongs().remove(song);
+		song.setUser(null);
+
+		return song;
 	}
 
 	public List<Topic> getTopics() {

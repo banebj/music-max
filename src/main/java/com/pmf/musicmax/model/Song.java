@@ -35,6 +35,11 @@ public class Song implements Serializable {
 	@JoinColumn(name="categoryId")
 	private Category category;
 
+	//bi-directional many-to-one association to User
+	@ManyToOne
+	@JoinColumn(name="userId")
+	private User user;
+
 	public Song() {
 	}
 
@@ -106,6 +111,14 @@ public class Song implements Serializable {
 
 	public void setCategory(Category category) {
 		this.category = category;
+	}
+
+	public User getUser() {
+		return this.user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 }
