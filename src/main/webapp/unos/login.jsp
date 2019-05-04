@@ -154,7 +154,7 @@ input[type=submit]:hover {
 	<div class="naslov">
 		Login<br>
 	</div>
-	${message}
+	${messagee}
 	<br><br>
 	<form action="/user/login" method="post">
 		Username<br><input type="text" name="username"><br>
