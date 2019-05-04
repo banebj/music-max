@@ -144,6 +144,8 @@ public class SongRepo {
 		Song song = new Song();
 		Category c = em.find(Category.class, categoryId);
 		song.setCategory(c);
+		User user = em.find(User.class, userId);
+		song.setUser(user);
 		song.setTitle(title);
 		song.setAuthor(author);
 		song.setArtist(artist);
@@ -159,7 +161,6 @@ public class SongRepo {
 			}catch(Exception e){}
 			if(s==null){
 				System.out.println("Uspesno");
-				User user = em.find(User.class, userId);
 				user.setSongCount(user.getSongCount()+1);
 				em.merge(user);
 				em.persist(song);
