@@ -102,7 +102,7 @@ nav li {
   <header>
 		<div class="navbar" id="myNav">
         <div>
-          <a href="/home.jsp">HOME</a>
+          <a href="/user/getUserWithMostSongsPosted">HOME</a>
           <a href="/song/getAllSongs">MUSIC</a>
           <a href="/Song/NewFile.jsp">FESTIVALS</a>
           <a href="#">NEWS</a>
