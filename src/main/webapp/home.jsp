@@ -83,27 +83,28 @@ nav li {
 </head>
 <body>
 
- <header>
+<header>
 	<div class="navbar" id="myNav">
-    <div>
-    	<a href="/user/getUserWithMostSongsPosted">HOME</a>
-        <a href="/song/getAllSongs">MUSIC</a>
-        <a href="/Song/NewFile.jsp">FESTIVALS</a>
-        <a href="#">NEWS</a>
-        <a href="#">FORUM</a>
-   	</div>
-    <div class="nav-right">
-    	<c:if test="${!empty user}">
+    	<div>
+        	<a href="/user/getUserWithMostSongsPosted">HOME</a>
+          	<a href="/song/getAllSongs">MUSIC</a>
+          	<a href="/Song/NewFile.jsp">FESTIVALS</a>
+          	<a href="#">NEWS</a>
+          	<a href="/topic/getAllTopics">FORUM</a>
+        </div>
+        <div class="nav-right">
+        <c:if test="${!empty user}">
         	<a href="#">Profile</a>
-          	<a href="/user/logout">Logout</a>
-         </c:if>
-         <c:if test="${empty user}">
+            <a href="/user/logout">Logout</a>
+        </c:if>
+        <c:if test="${empty user}">
           	<a href="/unos/login.jsp">Sign in</a>
        		<a href="/unos/Registracija.jsp">Sign up</a>
-         </c:if>
+       	</c:if>
+        </div>
     </div>
-    </div>
-  </header>
+</header>
+<br><br><br><br>
   
   <br><br><br><br>
   <div class="form">
