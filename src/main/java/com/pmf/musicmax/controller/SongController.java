@@ -63,6 +63,8 @@ public class SongController {
 		request.getSession().setAttribute("releaseYears", releaseYears);
 		m.addAttribute("releaseYears", releaseYears);
 		
+		request.getSession().setAttribute("message1", "");
+		request.getSession().setAttribute("message2", "");
 		request.getSession().setAttribute("songMessage", "");
 		
 		return "Song/manageSongs";
@@ -129,7 +131,6 @@ public class SongController {
 			request.getSession().setAttribute("message2", "");
 		}
 		if(i>0){
-			request.getSession().setAttribute("message", "");
 			request.getSession().setAttribute("song", s);
 			m.addAttribute("song", s);
 			return "Song/addSong";
