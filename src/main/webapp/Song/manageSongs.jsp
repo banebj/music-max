@@ -158,6 +158,11 @@ option{
   background-color: #9B5151;
   color: white;
 }
+
+.naslov{
+	color:white;
+	font-size: 150%;
+}
 </style>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -188,6 +193,10 @@ option{
     </div>
 </header>
 <br><br><br><br>
+
+<div class="naslov">
+	${songMessage}<br>
+</div>
 
 <form action="/song/getAllSongsByParameter" method="POST">
 
@@ -247,7 +256,7 @@ Add Song
 </div>
 </a>
 </c:if>
-	
+
 <table id="customers">
   <tr>
     <th>Title</th>
@@ -279,6 +288,8 @@ Add Song
  </table>
 <!--<c:if test="${!empty user}">-->
  <!-- </c:if> -->
+
+
 
 </body>
 </html>
