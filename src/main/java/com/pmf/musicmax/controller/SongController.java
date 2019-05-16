@@ -89,7 +89,7 @@ public class SongController {
 		int releaseYear = Integer.parseInt(request.getParameter("releaseYear"));
 		
 		
-		songsTable = sr.getAllSongsByParameter(categoryId, title, author, artist, releaseYear);
+		songsTable = sr.getAllSongsByParameter2(categoryId, title, author, artist, releaseYear);
 		
 		if(songsTable.size()==0){
 			return "redirect:/song/getAllSongs";
