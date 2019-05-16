@@ -88,13 +88,14 @@ public class SongController {
 		String artist = request.getParameter("artist");
 		int releaseYear = Integer.parseInt(request.getParameter("releaseYear"));
 		
-		
 		songsTable = sr.getAllSongsByParameter2(categoryId, title, author, artist, releaseYear);
 		
 		if(songsTable.size()==0){
+			request.getSession().setAttribute("songMessage", "Song doesn't exist");
 			return "redirect:/song/getAllSongs";
 		}else{
 			//Updating song Table
+			request.getSession().setAttribute("songMessage", "");
 			request.getSession().setAttribute("songsTable", songsTable);
 			m.addAttribute("songsTable", songsTable);
 			return "Song/manageSongs";
