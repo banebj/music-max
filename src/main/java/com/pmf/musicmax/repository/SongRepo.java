@@ -203,6 +203,78 @@ public class SongRepo {
 				
 		return c;
 	}
+	
+	public List<Song> getAllSongsByParameter2(int categoryId, String title, String author, String artist, int releaseYear) {
+		List<Song> songs = new ArrayList<Song>();
+		String query = "select s from Song s ";
+		String addQuery = " where ";
+		
+		int i = 0;
+		if(categoryId!=0) {
+			addQuery += "s.category.id = :categoryId ";
+			i++;
+		}
+		if(!title.equals("0")) {
+			if(i>0) {
+				addQuery += "and s.title like :title ";
+			}else {
+				addQuery += "s.title like :title ";
+			}
+			i++;
+		}
+		if(!author.equals("0")) {
+			if(i>0) {
+				addQuery += "and s.author like :author ";
+			}else {
+				addQuery += "s.author like :author ";
+			}
+			i++;
+		}
+		if(!artist.equals("0")) {
+			if(i>0) {
+				addQuery += "and s.artist like :artist ";
+			}else {
+				addQuery += "s.artist like :artist ";
+			}
+			i++;
+		}
+		if(releaseYear!=0) {
+			if(i>0) {
+				addQuery += "and s.releaseYear like :releaseYear ";
+			}else {
+				addQuery += "s.releaseYear like :releaseYear ";
+			}
+			i++;
+		}
+		if(i>0) {
+			query += addQuery;
+		}
+		
+		try{
+			Query q = em.createQuery(query);
+			if(categoryId!=0) {
+				q.setParameter("categoryId", categoryId);
+			}
+			if(!title.equals("0")) {
+				q.setParameter("title", title);
+			}
+			if(!author.equals("0")) {
+				q.setParameter("author", author);
+			}
+			if(!artist.equals("0")) {
+				q.setParameter("artist", artist);
+			}
+			if(releaseYear!=0) {
+				q.setParameter("releaseYear", releaseYear);
+			}
+				
+			songs = q.getResultList();
+			return songs;
+		}catch(Exception e){
+			e.printStackTrace();
+			return null;
+		}
+	}
 
 	
 }
