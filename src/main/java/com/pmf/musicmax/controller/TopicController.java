@@ -36,13 +36,31 @@ public class TopicController {
 	public String addTopic(Model m, HttpServletRequest request){
 		String title = request.getParameter("title");
 		String text = request.getParameter("text");
-		
 		User user = (User) request.getSession().getAttribute("user");
-		
 		Topic topic = new Topic();
 		topic.setTitle(title);
 		topic.setText(text);
 		topic.setUser(user);
+		
+		int i=0;
+		if(title=="") {
+			request.getSession().setAttribute("messageTitle", "Title Missing");
+			i++;
+		}else {
+			request.getSession().setAttribute("messageTitle", "");
+		}
+		if(text=="") {
+			request.getSession().setAttribute("messageText", "Text Missing");
+			i++;
+		}else {
+			request.getSession().setAttribute("messageText", "");
+		}
+		if(i>0) {
+			request.getSession().setAttribute("topic", topic);
+			m.addAttribute("topic", topic);
+			return "Topic/addTopic";
+		}
+		
 		
 		boolean topicAdded = tr.addTopic(topic);
 		if(topicAdded){

@@ -63,6 +63,8 @@ public class SongController {
 		request.getSession().setAttribute("releaseYears", releaseYears);
 		m.addAttribute("releaseYears", releaseYears);
 		
+		request.getSession().setAttribute("songMessage", "");
+		
 		return "Song/manageSongs";
 	}
 	
@@ -91,15 +93,13 @@ public class SongController {
 		songsTable = sr.getAllSongsByParameter2(categoryId, title, author, artist, releaseYear);
 		
 		if(songsTable.size()==0){
-			request.getSession().setAttribute("songMessage", "Song doesn't exist");
-			return "redirect:/song/getAllSongs";
+			request.getSession().setAttribute("songMessage", "Song dosen't exist");
 		}else{
-			//Updating song Table
 			request.getSession().setAttribute("songMessage", "");
-			request.getSession().setAttribute("songsTable", songsTable);
-			m.addAttribute("songsTable", songsTable);
-			return "Song/manageSongs";
 		}
+		request.getSession().setAttribute("songsTable", songsTable);
+		m.addAttribute("songsTable", songsTable);
+		return "Song/manageSongs";
 	}
 	
 	@RequestMapping(value="addSong", method=RequestMethod.POST)
