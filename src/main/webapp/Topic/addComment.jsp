@@ -106,6 +106,18 @@ nav li {
   font-weight: bold;
 }
 
+.comments {
+  width: 70%;
+  height: 50px;
+  padding: 10px;
+  background-color: white;
+  color: black;
+  border-radius: 25px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 15px;
+  font-weight: bold;
+}
+
 h1 {
   text-align: center;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -162,8 +174,10 @@ h1 {
 	
 	Comments<br>
 	<c:forEach items="${comments}" var="c">
-	${c.text}<br>
-	Commented By: ${c.user.firstName} ${c.user.lastName}<br><br>
+	<div class="comments">
+		${c.text}<br><br>
+		Commented By: ${c.user.firstName} ${c.user.lastName}
+	</div><br>
 	</c:forEach>
 	
 </div><br>
