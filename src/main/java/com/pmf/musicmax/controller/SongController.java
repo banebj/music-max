@@ -63,6 +63,7 @@ public class SongController {
 		request.getSession().setAttribute("releaseYears", releaseYears);
 		m.addAttribute("releaseYears", releaseYears);
 		
+		request.getSession().setAttribute("message", "");
 		request.getSession().setAttribute("message1", "");
 		request.getSession().setAttribute("message2", "");
 		request.getSession().setAttribute("songMessage", "");

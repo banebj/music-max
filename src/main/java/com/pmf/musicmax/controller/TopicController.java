@@ -29,6 +29,9 @@ public class TopicController {
 		request.getSession().setAttribute("topics", topics);
 		m.addAttribute("topics", topics);
 		
+		request.getSession().setAttribute("messageTitle", "");
+		request.getSession().setAttribute("messageText", "");
+		
 		return "Topic/manageTopics";
 	}
 	
