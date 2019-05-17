@@ -116,7 +116,7 @@ h1 {
 </style>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Add Comment</title>
+<title>${song.title}</title>
 </head>
 <body>
 
@@ -141,7 +141,7 @@ h1 {
         </div>
     </div>
 </header>
-<br><br><br>
+<br><br><br><br>
 
 <div class="background">
 	<div class="podNaslov">
@@ -174,7 +174,6 @@ h1 {
 	</c:forEach>
 		
 </div><br>
- 
  
 </body>
 </html>
