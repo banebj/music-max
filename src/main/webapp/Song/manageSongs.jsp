@@ -64,7 +64,7 @@ nav li {
 	padding-left:20px;
 	padding-top:10px;
 	padding-bottom:10px;
-	width: 30%;
+	width: 40%;
 	font-weight: 900;
     background-color: #DE5555;
     color: white;
@@ -73,6 +73,11 @@ nav li {
     border-radius: 4px;
     cursor: pointer;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+.submitComment:hover {
+  background-color: white;
+  color: black;
 }
 
 select{
@@ -138,6 +143,7 @@ option{
   margin: 15px;
   border-radius: 40%;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-weight: bold;
 }
 
 .buttonSearch:hover {
