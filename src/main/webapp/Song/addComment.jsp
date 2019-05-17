@@ -146,6 +146,7 @@ nav li {
 	Commented By: ${c.user.firstName} ${c.user.lastName}<br><br>
 	</c:forEach>
 	
+	<c:if test="${!empty user}">
 	<div class="form">
 		<div class="naslov">
 			Add Comment<br>
@@ -157,6 +158,7 @@ nav li {
 			<input type="submit" value="Add Comment"/>
 		</form>
 	</div>
+	</c:if>
 	
 </div>	
 

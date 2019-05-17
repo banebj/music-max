@@ -264,9 +264,9 @@ Add Song
     <th>Artist</th>
     <th>Release Year</th>
     <th>Category</th>
-	<c:if test="${!empty user}">
+
     <th></th>
-	</c:if> 
+
   </tr>
   <c:forEach items="${songsTable}" var="s">
   <tr>
@@ -275,14 +275,14 @@ Add Song
     <td>${s.artist}</td>
     <td>${s.releaseYear}</td>
     <td>${s.category.type}</td>
-	<c:if test="${!empty user}">
+
     <td>
     <form action="/song/getAllCommentsBySongById" method="GET">
 		<input type="hidden" name="id" value="${s.id}"/> 
-		<input class="submitComment" type="submit" value="Comment..."/>
+		<input class="submitComment" type="submit" value="Open discussion"/>
 	</form>
 	</td>
-	</c:if>
+
   </tr>
   </c:forEach>
  </table>
