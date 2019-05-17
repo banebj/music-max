@@ -149,8 +149,10 @@ input[type=submit]:hover {
 			Add Topic<br>
 		</div>
 		<form action="/topic/addTopic" method="POST">
-			Title<br><input type="text" name="title" value=""/><br> 
-			Text<br><input type="text" name="text" value=""/><br><br>
+		    ${messageTitle}<br>
+			Title<br><input type="text" name="title" value="${topic.title}"/><br> 
+			${messageText}<br>
+			Text<br><input type="text" name="text" value="${topic.text}"/><br><br>
 			<input type="submit" value="Add Topic"/>
 		</form>
 	</div>

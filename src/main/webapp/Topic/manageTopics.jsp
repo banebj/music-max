@@ -168,21 +168,21 @@ Add Topic
 <table id="customers">
   <tr>
     <th>Title</th>
-	<c:if test="${!empty user}">
+
     <th></th>
-	</c:if> 
+
   </tr>
   <c:forEach items="${topics}" var="t">
   <tr>
     <td>${t.title}</td>
-	<c:if test="${!empty user}">
+	
     <td>
     <form action="/topic/getAllCommentsByTopicId" method="GET">
 		<input type="hidden" name="id" value="${t.id}"/> 
 		<input class="submitComment" type="submit" value="Open discussion"/>
 	</form>
 	</td>
-	</c:if>
+
   </tr>
   </c:forEach>
  </table>
