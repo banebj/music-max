@@ -59,31 +59,34 @@ nav li {
   float: right;
 }
 
-.podNaslov{
-	background-color: #FAEBD7;
-	color:black;
-	font-size: 100%;
-}
-
-.background1{
-	margin-right: 70%;
-	margin-left: 0%;
-	padding:40px;
-	background-color:#FFFAF0;
-	border: 2px solid black;
+.background{
+	margin-right: 28%;
+	margin-left: 28%;
+	padding:30px;
+	background-color:#DEB887;
+	border: 5px solid black;
 	font-weight: 1000;
 	font-style: italic;
 }
 
+.podNaslov{
+	background-color: #FAEBD7;
+	color:black;
+	font-size: 15px;
+	border-radius: 5%;
+	border: 5px solid black;
+}
+
 .buttonSearch {
   background-color: #FFDEAD;
-  width: 10%;
+  width: 15%;
   font-size: 15px;
   text-align: center;
   padding: 5px 10px;
   margin: 15px;
-  border-radius: 40%;
+  border-radius: 60%;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-weight: bold;
 }
 
 .buttonSearch:hover {
@@ -91,10 +94,28 @@ nav li {
   color: white;
 }
 
+.comment {
+  width: 70%;
+  height: 40px;
+  padding: 10px;
+  background-color: white;
+  color: black;
+  border-radius: 25px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  color: black;
+}
+
 </style>
 
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>${topic.title}</title>
 </head>
 <body>
 
@@ -121,36 +142,31 @@ nav li {
 </header>
 <br><br><br><br>
 
-<div class="background1">
+<div class="background">
 	<div class="podNaslov">
-	   	Title<br>
-	   	${topic.title}
-	   	<br><br>
-	   	Text<br>
+	   	<h1>${topic.title}</h1>
 	   	${topic.text}
 	   	<br><br>
+	</div><br>
+
+	<c:if test="${!empty user}">
+	<div class="form">
+		<form action="/topic/addCommentByTopicAndUserId" method="POST">
+			<input placeholder="Comment.." class="comment" type="text" name="text"/><br> 
+			<input type="hidden" name="song" value="${topic.id}"/>
+			<input type="hidden" name="user" value="${user.id}"/>
+			<input class="buttonSearch" type="submit" value="Submit"/>
+		</form>
 	</div>
+	</c:if><br>
+	
 	Comments<br>
 	<c:forEach items="${comments}" var="c">
 	${c.text}<br>
 	Commented By: ${c.user.firstName} ${c.user.lastName}<br><br>
 	</c:forEach>
 	
-	<c:if test="${!empty user}">
-	<div class="form">
-		<div class="naslov">
-			Add Comment<br>
-		</div>
-		<form action="/topic/addCommentByTopicAndUserId" method="POST">
-			Text<br><input type="text" name="text"/><br> 
-			<input type="hidden" name="song" value="${topic.id}"/>
-			<input type="hidden" name="user" value="${user.id}"/>
-			<input type="submit" value="Add Comment"/>
-		</form>
-	</div>
-	</c:if>
-	
-</div>	
+</div><br>
 
 </body>
 </html>
